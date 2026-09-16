@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АМК — Колледж Нового Поколения</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Фоновые неоновые пятна -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Плавающая шапка (Glassmorphism) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-badge">АМК</span>
+        <span class="logo-text">КОЛЛЕДЖ</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#specialties">Специальности</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#schedule">Расписание</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" id="openSearchBtn">
+          <span>Поиск...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <a href="#apply" class="btn-primary">Поступить</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero-секция -->
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="tag-pill">
+          <span class="pulse-dot"></span> Приемная кампания 2026 открыта
+        </div>
+        <h1 class="hero-title">
+          Образование, которое <br>
+          <span class="gradient-text">опережает технологии.</span>
+        </h1>
+        <p class="hero-desc">
+          Практические навыки, аккредитованные лаборатории и прямой старт карьеры в топовых IT, технических и бизнес-компаниях.
+        </p>
+        <div class="hero-buttons">
+          <a href="#specialties" class="btn-primary btn-large">Выбрать специальность</a>
+          <a href="#calc" class="btn-secondary btn-large">Оценить шансы</a>
+        </div>
+
+        <!-- Статистика -->
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-num">94%</span>
+            <span class="stat-label">Трудоустройство</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">45+</span>
+            <span class="stat-label">Партнеров-компаний</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">120+</span>
+            <span class="stat-label">Грантов ежегодно</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bento Grid Специальностей -->
+    <section class="section" id="specialties">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Популярные направления</h2>
+          <p class="section-subtitle">Программы, созданные под реальные требования рынка</p>
+        </div>
+
+        <div class="bento-grid" id="cardsContainer">
+          <div class="bento-card bento-large">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <span class="badge">Top Choice</span>
+              <h3>Информационные системы и программирование</h3>
+              <p>Fullstack-разработка, мобильные приложения, DevOps и архитектура баз данных. Стажировки с 3 курса.</p>
+              <div class="card-footer">
+                <span>3 года 10 мес.</span>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <span class="badge badge-cyan">Design</span>
+              <h3>Графический и веб-дизайн</h3>
+              <p>UI/UX, 3D-графика, брендинг и дизайн интерфейсов в Figma и Blender.</p>
+              <div class="card-footer">
+                <span>2 года 10 мес.</span>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <span class="badge badge-purple">Tech</span>
+              <h3>Сетевое и системное администрирование</h3>
+              <p>Настройка серверов, кибербезопасность, облачные сети и Linux-системы.</p>
+              <div class="card-footer">
+                <span>3 года 10 мес.</span>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card bento-wide">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <span class="badge badge-green">Business</span>
+              <h3>Экономика, логистика и учет</h3>
+              <p>Управление финансами, внешнеэкономическая деятельность и современные ERP-системы.</p>
+              <div class="card-footer">
+                <span>2 года 10 мес.</span>
+                <span class="arrow">→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Интерактивный калькулятор шансов -->
+    <section class="section" id="calc">
+      <div class="container">
+        <div class="calc-box">
+          <h2>Калькулятор шансов на грант</h2>
+          <p>Двигай ползунок своего среднего балла аттестата:</p>
+          
+          <div class="slider-wrapper">
+            <div class="slider-value" id="scoreDisplay">4.50</div>
+            <input type="range" min="3.0" max="5.0" step="0.05" value="4.50" id="scoreSlider" class="custom-slider">
+          </div>
+
+          <div class="calc-status" id="calcResult">
+            Высокие шансы на грант на большинство IT-специальностей!
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Command Menu (Cmd + K Modal) -->
+  <div class="cmd-modal-backdrop" id="cmdModal">
+    <div class="cmd-modal">
+      <div class="cmd-input-wrap">
+        <input type="text" id="cmdInput" placeholder="Что вы ищете? (например, гранты, расписание, код)">
+        <span class="cmd-esc" id="closeCmdBtn">ESC</span>
+      </div>
+      <div class="cmd-results" id="cmdResults">
+        <div class="cmd-item" data-url="#specialties">💻 Программирование и IT</div>
+        <div class="cmd-item" data-url="#specialties">🎨 Дизайн и медиа</div>
+        <div class="cmd-item" data-url="#calc">📊 Калькулятор баллов</div>
+        <div class="cmd-item" data-url="#apply">📝 Приемная комиссия / Документы</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
